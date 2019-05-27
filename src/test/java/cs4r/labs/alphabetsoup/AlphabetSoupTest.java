@@ -37,4 +37,10 @@ class AlphabetSoupTest {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
         assertTrue(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l', 'a')));
     }
+
+    @Test
+    void messageCannotBeConstructedIfBowlContainsLessLettersThanMessage() {
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+        assertFalse(alphabetSoup.canConstruct("holaa", Arrays.asList('h', 'o', 'l', 'a')));
+    }
 }
