@@ -27,26 +27,37 @@ class AlphabetSoupTest {
 
     @Test
     void messageCannotBeConstructedIfAtLeastOneLetterIsMissingInTheBowl() {
-
         AlphabetSoup alphabetSoup = new AlphabetSoup();
+
         assertFalse(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l')));
     }
 
     @Test
     void messageCanBeConstructedIfBowlContainsExactlyAllLetters() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
+
         assertTrue(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l', 'a')));
     }
 
     @Test
     void messageCannotBeConstructedIfBowlContainsLessLettersThanMessage() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
+
         assertFalse(alphabetSoup.canConstruct("hola que pasa", Arrays.asList('h', 'o', 'l', 'a')));
     }
 
     @Test
     void messageCanBeConstructedIfBowlContainsAllLetters() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
+
         assertTrue(alphabetSoup.canConstruct("hola que pasa", Arrays.asList('h', 'o', 'l', 'a', 'q', 'u', 'e', 'p', 'a', 's', 'a')));
     }
+
+    @Test
+    void messageCannotBeConstructedIfBowlContainsAllLettersButInDifferenceFrequencies() {
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+
+        assertFalse(alphabetSoup.canConstruct("hola que pasa asa", Arrays.asList('h', 'o', 'l', 'a', 'q', 'u', 'e', 'p', 'a', 's', 'a')));
+    }
+
 }
