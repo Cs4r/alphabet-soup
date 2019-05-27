@@ -9,10 +9,6 @@ public class AlphabetSoup {
 
     boolean canConstruct(String message, List<Character> bowl) {
 
-        if (message.isEmpty()) {
-            return true;
-        }
-
         Map<Character, Integer> bowlOccurrences = new HashMap<>();
 
         for (Character c : bowl) {
