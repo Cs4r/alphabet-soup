@@ -31,20 +31,15 @@ public class AlphabetSoup {
             }
         }
 
-        if (!bowlOccurrences.keySet().containsAll(messageOccurrences.keySet())) {
-            return false;
-        } else {
 
-            for (Map.Entry<Character, Integer> e : messageOccurrences.entrySet()) {
+        for (Map.Entry<Character, Integer> e : messageOccurrences.entrySet()) {
 
-                if (bowlOccurrences.getOrDefault(e.getKey(), 0) < e.getValue()) {
-                    return false;
-                }
-
+            if (bowlOccurrences.getOrDefault(e.getKey(), 0) < e.getValue()) {
+                return false;
             }
 
-            return true;
         }
 
+        return true;
     }
 }
