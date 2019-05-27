@@ -6,6 +6,11 @@ public class AlphabetSoup {
 
 
     boolean canConstruct(String message, List<Character> bowl) {
-        return true;
+
+        if (message.isEmpty()) {
+            return true;
+        }
+
+        return false;
     }
 }

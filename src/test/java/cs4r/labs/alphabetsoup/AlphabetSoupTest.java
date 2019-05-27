@@ -1,10 +1,12 @@
 package cs4r.labs.alphabetsoup;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AlphabetSoupTest {
 
@@ -13,13 +15,21 @@ class AlphabetSoupTest {
     void emptyStringCanBeConstructedWithEmptyBowl() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
 
-        Assertions.assertTrue(alphabetSoup.canConstruct("", Collections.emptyList()));
+        assertTrue(alphabetSoup.canConstruct("", Collections.emptyList()));
     }
 
     @Test
     void emptyStringCanBeConstructedWithNonEmptyBowl() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
 
-        Assertions.assertTrue(alphabetSoup.canConstruct("", Arrays.asList('A', 'B', 'C')));
+        assertTrue(alphabetSoup.canConstruct("", Arrays.asList('A', 'B', 'C')));
     }
+
+    @Test
+    void messageCannotBeConstructedIfAtLeastOneLetterIsMissingInTheBowl() {
+
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+        assertFalse(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l')));
+    }
+
 }
