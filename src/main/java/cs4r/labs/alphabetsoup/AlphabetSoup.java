@@ -11,6 +11,12 @@ public class AlphabetSoup {
             return true;
         }
 
-        return false;
+        for (Character c : message.toCharArray()) {
+            if (!bowl.contains(c)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

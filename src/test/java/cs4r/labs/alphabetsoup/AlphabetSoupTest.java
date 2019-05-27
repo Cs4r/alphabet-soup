@@ -32,4 +32,9 @@ class AlphabetSoupTest {
         assertFalse(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l')));
     }
 
+    @Test
+    void messageCanBeConstructedIfBowlContainsExactlyAllLetters() {
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+        assertTrue(alphabetSoup.canConstruct("hola", Arrays.asList('h', 'o', 'l', 'a')));
+    }
 }
