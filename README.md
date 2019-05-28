@@ -65,7 +65,7 @@ boolean canConstruct(String message, List<Character> bowl) {
 
 ### Time complexity
 
-- Time complexity of the algorithm corresponds to _max(0(m), O(s))_. That's to say that the time complexity is the maximum between the message length and the number of letters in the bowl of soup. 
+- Time complexity of the algorithm corresponds to _max(O(m), O(s))_. That's to say that the time complexity is the maximum between the message length and the number of letters in the bowl of soup. 
 
 
 ### Space complexity 
