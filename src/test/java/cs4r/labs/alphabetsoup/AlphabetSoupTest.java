@@ -67,5 +67,12 @@ class AlphabetSoupTest {
         assertFalse(alphabetSoup.canConstruct("hola que pasaaaaaaaaaaa", Arrays.asList('h', 'o', 'l', 'a', 'q', 'u', 'e', 'p', 'a', 's', 'a')));
     }
 
+    @Test
+    void canConstructIsCaseSensitive() {
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+
+        assertFalse(alphabetSoup.canConstruct("hola", Arrays.asList('H', 'O', 'L', 'A')));
+    }
+
 
 }
