@@ -61,7 +61,7 @@ class AlphabetSoupTest {
     }
 
     @Test
-    void messageCannotBeConstructedIfBowlContainsAllLettersButWithInDifferentFrequencies() {
+    void messageCannotBeConstructedIfBowlContainsAllLettersButWithDifferentFrequencies() {
         AlphabetSoup alphabetSoup = new AlphabetSoup();
 
         assertFalse(alphabetSoup.canConstruct("hola que pasaaaaaaaaaaa", Arrays.asList('h', 'o', 'l', 'a', 'q', 'u', 'e', 'p', 'a', 's', 'a')));
