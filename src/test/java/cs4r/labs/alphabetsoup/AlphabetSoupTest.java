@@ -74,5 +74,14 @@ class AlphabetSoupTest {
         assertFalse(alphabetSoup.canConstruct("hola", Arrays.asList('H', 'O', 'L', 'A')));
     }
 
+    @Test
+    void canConstructConsidersSymbols() {
+
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+
+        assertTrue(alphabetSoup.canConstruct("HOLA, AMIGO", Arrays.asList('H', 'O', 'L', 'A', ',', 'A', 'M', 'I', 'G', 'O')));
+        assertFalse(alphabetSoup.canConstruct("HOLA, AMIGO", Arrays.asList('H', 'O', 'L', 'A', 'A', 'M', 'I', 'G', 'O')));
+    }
+
 
 }
