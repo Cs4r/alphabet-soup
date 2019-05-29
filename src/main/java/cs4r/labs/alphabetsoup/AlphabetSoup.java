@@ -12,7 +12,7 @@ public class AlphabetSoup {
             return false;
         }
 
-        Map<Character, Integer> messageOccurrences = getOccurrencesPerLetter(message);
+        Map<Character, Integer> messageOccurrences = getOccurrencesPerCharacter(message);
 
         int i = 0;
 
@@ -32,7 +32,7 @@ public class AlphabetSoup {
         return messageOccurrences.size() == 0;
     }
 
-    private Map<Character, Integer> getOccurrencesPerLetter(String message) {
+    private Map<Character, Integer> getOccurrencesPerCharacter(String message) {
         Map<Character, Integer> messageOccurrences = new HashMap<>();
 
         for (Character c : message.toCharArray()) {
