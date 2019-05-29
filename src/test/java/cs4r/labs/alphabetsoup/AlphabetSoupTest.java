@@ -80,5 +80,13 @@ class AlphabetSoupTest {
         assertFalse(alphabetSoup.canConstruct("HOLA, AMIGO", "HOLA AMIGO"));
     }
 
+    @Test
+    void messageCanBeConstructedIfVeryLargeInputContainsAllLettersOfMessage() {
+        AlphabetSoup alphabetSoup = new AlphabetSoup();
+
+        assertTrue(alphabetSoup.canConstruct("hola amigo", "aaaaaaaaaaaaaaaaaaaaaa_______-hola___________amigo____opqrstuvwxyzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+
+    }
+
 
 }

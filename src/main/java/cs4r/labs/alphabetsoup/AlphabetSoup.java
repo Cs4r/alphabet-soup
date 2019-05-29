@@ -14,17 +14,22 @@ public class AlphabetSoup {
 
         Map<Character, Integer> messageOccurrences = getOccurrencesPerLetter(message);
 
-        Map<Character, Integer> bowlOccurrences = getOccurrencesPerLetter(bowl);
+        int i = 0;
 
-        for (Map.Entry<Character, Integer> e : messageOccurrences.entrySet()) {
+        while (!messageOccurrences.isEmpty() && i < bowl.length()) {
 
-            if (bowlOccurrences.getOrDefault(e.getKey(), 0) < e.getValue()) {
-                return false;
+            char character = bowl.charAt(i);
+            int characterCount = messageOccurrences.getOrDefault(character, 0);
+
+            if (characterCount > 1) {
+                messageOccurrences.put(character, characterCount - 1);
+            } else if (characterCount == 1) {
+                messageOccurrences.remove(character);
             }
-
+            i++;
         }
 
-        return true;
+        return messageOccurrences.size() == 0;
     }
 
     private Map<Character, Integer> getOccurrencesPerLetter(String message) {
