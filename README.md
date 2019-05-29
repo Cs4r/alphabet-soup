@@ -33,7 +33,7 @@ This project has only unit tests.
 
         Map<Character, Integer> messageOccurrences = getOccurrencesPerCharacter(message); // O(m)
 
-        int i = 0;
+        int i = 0; // O(1)
 
         while (!messageOccurrences.isEmpty() && i < bowl.length()) { // O(s)
 
@@ -79,4 +79,4 @@ That's to say that the time complexity is the the number of characters in the af
 
 ### Space complexity 
 
-- Space complexity could be considered as constant since in the very worst case scenario we have a map with 65536 keys (_messageOccurrences_).
+- Space complexity could be considered as constant since in the very worst case scenario we have a map with 65536 (or 2^16) keys (_messageOccurrences_).
