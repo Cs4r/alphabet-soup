@@ -71,10 +71,10 @@ This project has only unit tests.
 
 ### Time complexity
 
-- Time complexity of the algorithm corresponds to _O(s)_. Being _s_ the number of letters in the soup. 
+- Time complexity of the algorithm corresponds to _O(s)_. Being _s_ the number of characters in the soup. 
 
 In the very worst case scenario we iterate the whole bowl of soup.
-That's to say that the time complexity is the the number of letters in the aforementioned bowl. 
+That's to say that the time complexity is the the number of characters in the aforementioned bowl. 
 
 
 ### Space complexity 
