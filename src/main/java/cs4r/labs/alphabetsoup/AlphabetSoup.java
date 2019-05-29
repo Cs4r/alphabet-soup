@@ -8,27 +8,13 @@ public class AlphabetSoup {
 
     boolean canConstruct(String message, String bowl) {
 
-        Map<Character, Integer> bowlOccurrences = new HashMap<>();
-
-        for (Character c : bowl.toCharArray()) {
-            if (bowlOccurrences.containsKey(c)) {
-                bowlOccurrences.put(c, bowlOccurrences.get(c) + 1);
-            } else {
-                bowlOccurrences.put(c, 1);
-            }
+        if (bowl.length() < message.length()) {
+            return false;
         }
 
-        Map<Character, Integer> messageOccurrences = new HashMap<>();
+        Map<Character, Integer> bowlOccurrences = getFrequencies(bowl);
 
-        for (Character c : message.toCharArray()) {
-            if (c != ' ') {
-                if (messageOccurrences.containsKey(c)) {
-                    messageOccurrences.put(c, messageOccurrences.get(c) + 1);
-                } else {
-                    messageOccurrences.put(c, 1);
-                }
-            }
-        }
+        Map<Character, Integer> messageOccurrences = getFrequencies(message);
 
 
         for (Map.Entry<Character, Integer> e : messageOccurrences.entrySet()) {
@@ -40,5 +26,20 @@ public class AlphabetSoup {
         }
 
         return true;
+    }
+
+    private Map<Character, Integer> getFrequencies(String message) {
+        Map<Character, Integer> messageOccurrences = new HashMap<>();
+
+        for (Character c : message.toCharArray()) {
+            if (c != ' ') {
+                if (messageOccurrences.containsKey(c)) {
+                    messageOccurrences.put(c, messageOccurrences.get(c) + 1);
+                } else {
+                    messageOccurrences.put(c, 1);
+                }
+            }
+        }
+        return messageOccurrences;
     }
 }
