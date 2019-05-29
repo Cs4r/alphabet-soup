@@ -1,17 +1,16 @@
 package cs4r.labs.alphabetsoup;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class AlphabetSoup {
 
 
-    boolean canConstruct(String message, List<Character> bowl) {
+    boolean canConstruct(String message, String bowl) {
 
         Map<Character, Integer> bowlOccurrences = new HashMap<>();
 
-        for (Character c : bowl) {
+        for (Character c : bowl.toCharArray()) {
             if (bowlOccurrences.containsKey(c)) {
                 bowlOccurrences.put(c, bowlOccurrences.get(c) + 1);
             } else {
