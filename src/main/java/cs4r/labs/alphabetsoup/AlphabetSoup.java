@@ -12,10 +12,9 @@ public class AlphabetSoup {
             return false;
         }
 
-        Map<Character, Integer> bowlOccurrences = getFrequencies(bowl);
+        Map<Character, Integer> messageOccurrences = getOccurrencesPerLetter(message);
 
-        Map<Character, Integer> messageOccurrences = getFrequencies(message);
-
+        Map<Character, Integer> bowlOccurrences = getOccurrencesPerLetter(bowl);
 
         for (Map.Entry<Character, Integer> e : messageOccurrences.entrySet()) {
 
@@ -28,7 +27,7 @@ public class AlphabetSoup {
         return true;
     }
 
-    private Map<Character, Integer> getFrequencies(String message) {
+    private Map<Character, Integer> getOccurrencesPerLetter(String message) {
         Map<Character, Integer> messageOccurrences = new HashMap<>();
 
         for (Character c : message.toCharArray()) {
